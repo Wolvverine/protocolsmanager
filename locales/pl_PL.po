@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Protocols Manager\n"
-"POT-Creation-Date: 2023-04-06 18:02+0200\n"
-"PO-Revision-Date: 2023-04-06 18:02+0200\n"
+"POT-Creation-Date: 2023-12-01 18:37+0100\n"
+"PO-Revision-Date: 2023-12-01 18:41+0100\n"
 "Last-Translator: Michał Panasiewicz <wolvverinepld@gmail.com>\n"
 "Language-Team: Wolvverine\n"
 "Language: pl\n"
@@ -11,12 +11,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
 "|| n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __:1,2c;ngettext:1,2;dgettext:2;dcgettext:2;"
 "dngettext:2,3;dcngettext:2,3\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: ajax/SendOneMailAjax.php:32
+msgctxt "protocolsmanager"
+msgid "GLPI Protocols Manager mail"
+msgstr "Mail Menadżera Protokołów GLPI"
 
 #: hook.php:18 inc/Buttons.php:13 inc/protocols.class.php:87
 msgctxt "protocolsmanager"
@@ -28,227 +33,233 @@ msgctxt "protocolsmanager"
 msgid "My assets"
 msgstr "Moje zasoby"
 
-#: inc/ConfigNewSettingsForms.class.php:20
+#: inc/ConfigNewSettingsForms.class.php:18
 msgctxt "protocolsmanager"
 msgid "Set user fields option"
 msgstr "Ustaw pole dla użytkownika"
 
-#: inc/ConfigNewSettingsForms.class.php:35
-#: inc/ConfigNewSettingsForms.class.php:59
-#: inc/ConfigNewSettingsForms.class.php:84
-#: inc/ConfigNewSettingsForms.class.php:108
-#: inc/ConfigNewSettingsForms.class.php:132
-#: inc/ConfigNewSettingsForms.class.php:154
-#: inc/ConfigNewSettingsForms.class.php:176
-#: inc/ConfigNewSettingsForms.class.php:198
+#: inc/ConfigNewSettingsForms.class.php:33
+#: inc/ConfigNewSettingsForms.class.php:117
+#: inc/ConfigNewSettingsForms.class.php:138
+#: inc/ConfigNewSettingsForms.class.php:159
 msgctxt "protocolsmanager"
 msgid "Change"
 msgstr "Zmień"
 
-#: inc/ConfigNewSettingsForms.class.php:47
-msgctxt "protocolsmanager"
-msgid "Show user assets"
-msgstr "Pokaż zasoby użytkownika"
-
-#: inc/ConfigNewSettingsForms.class.php:72
+#: inc/ConfigNewSettingsForms.class.php:61
 msgctxt "protocolsmanager"
 msgid "sign protococols service"
 msgstr "usługa podpisywania protokołów"
 
-#: inc/ConfigNewSettingsForms.class.php:96
+#: inc/ConfigNewSettingsForms.class.php:76
 msgctxt "protocolsmanager"
 msgid "email confirmation"
 msgstr "potwierdzenie email"
 
-#: inc/ConfigNewSettingsForms.class.php:120
+#: inc/ConfigNewSettingsForms.class.php:90
 msgctxt "protocolsmanager"
 msgid "protococols reminder service"
 msgstr "usługa przypominania o podpisaniach"
 
-#: inc/ConfigNewSettingsForms.class.php:144
+#: inc/ConfigNewSettingsForms.class.php:107
 msgctxt "protocolsmanager"
 msgid "protococols first reminder email"
 msgstr "pierwsze przypomnienie o protokole"
 
-#: inc/ConfigNewSettingsForms.class.php:166
+#: inc/ConfigNewSettingsForms.class.php:128
 msgctxt "protocolsmanager"
 msgid "protococols second reminder email"
 msgstr "drugie przypomnienie o protokole"
 
-#: inc/ConfigNewSettingsForms.class.php:188
+#: inc/ConfigNewSettingsForms.class.php:149
 msgctxt "protocolsmanager"
 msgid "How long should one wait before sending a reminder"
 msgstr "Jak długo należy czekać przed wysłaniem przypomnienia"
 
-#: inc/ConfigNewSettingsForms.class.php:213
+#: inc/ConfigNewSettingsForms.class.php:201
 msgctxt "protocolsmanager"
 msgid "sign email template"
 msgstr "szablon e-maila podpisu"
 
-#: inc/ConfigNewSettingsForms.class.php:229
+#: inc/ConfigNewSettingsForms.class.php:217
 msgctxt "protocolsmanager"
 msgid "Save"
 msgstr "Zachowaj"
 
-#: inc/ShowUserAssets.php:49
+#: inc/ShowUserAssets.php:46
 msgctxt "protocolsmanager"
 msgid "Created date"
 msgstr "Data utworzenia"
 
-#: inc/SignProtocolByEmail.php:68 inc/sign.class.php:80
+#: inc/SignProtocolByEmail.php:64 inc/sign.class.php:83
 msgctxt "protocolsmanager"
 msgid "Document signed"
 msgstr "Dokument podpisany"
 
-#: inc/SignProtocolByEmail.php:71 inc/sign.class.php:83
+#: inc/SignProtocolByEmail.php:67 inc/sign.class.php:86
 msgctxt "protocolsmanager"
 msgid "Error - Document not signed"
 msgstr "Błąd - dokument niepodpisany"
 
-#: inc/config.class.php:127 inc/config.class.php:243
+#: inc/config.class.php:134 inc/config.class.php:274
 msgctxt "protocolsmanager"
 msgid "Templates settings"
 msgstr "Ustawienia szablonów"
 
-#: inc/config.class.php:131 inc/config.class.php:247
+#: inc/config.class.php:138 inc/config.class.php:278
 msgctxt "protocolsmanager"
 msgid "Email settings"
 msgstr "Ustawienia e-maila"
 
-#: inc/config.class.php:142
+#: inc/config.class.php:149
 msgctxt "protocolsmanager"
 msgid "Create"
 msgstr "Utwórz"
 
-#: inc/config.class.php:142
+#: inc/config.class.php:149
 msgctxt "protocolsmanager"
 msgid "template"
 msgstr "szablon"
 
-#: inc/config.class.php:143
+#: inc/config.class.php:150
 msgctxt "protocolsmanager"
 msgid "Template name"
 msgstr "Nazwa szablonu"
 
-#: inc/config.class.php:144
+#: inc/config.class.php:151
+msgctxt "protocolsmanager"
+msgid "You can use {owner} here."
+msgstr "Możesz użyć {owner} tutaj."
+
+#: inc/config.class.php:152
 msgctxt "protocolsmanager"
 msgid "Font"
 msgstr "Czcionka"
 
-#: inc/config.class.php:148 inc/config.class.php:158
+#: inc/config.class.php:157 inc/config.class.php:167
 msgctxt "protocolsmanager"
 msgid "selected"
 msgstr "wybrany"
 
-#: inc/config.class.php:154
+#: inc/config.class.php:163
 msgctxt "protocolsmanager"
 msgid "Font size"
 msgstr "Wielkość czcionki"
 
-#: inc/config.class.php:163
+#: inc/config.class.php:172
 msgctxt "protocolsmanager"
 msgid "Word breaking"
 msgstr "Łamanie wyrazów"
 
-#: inc/config.class.php:173
+#: inc/config.class.php:182
 msgctxt "protocolsmanager"
 msgid "Upper Content"
 msgstr "Górna Zawartość"
 
-#: inc/config.class.php:175
+#: inc/config.class.php:183 inc/config.class.php:185
+msgctxt "protocolsmanager"
+msgid "You can use {owner} or {admin} here."
+msgstr "Możesz użyć tutaj {owner} lub {admin}."
+
+#: inc/config.class.php:186
 msgctxt "protocolsmanager"
 msgid "Footer"
 msgstr "Stopka"
 
-#: inc/config.class.php:188
+#: inc/config.class.php:199
 msgctxt "protocolsmanager"
 msgid "serial and inventory number in separate columns"
 msgstr "numer seryjny i numer inwentarzowy w oddzielnych kolumnach"
 
-#: inc/config.class.php:192
+#: inc/config.class.php:203
 msgctxt "protocolsmanager"
 msgid "serial or inventory number if serial doesn't exists"
 msgstr "numer seryjny lub numer inwentarzowy, jeśli numer seryjny nie istnieje"
 
-#: inc/config.class.php:204
+#: inc/config.class.php:215
 msgctxt "protocolsmanager"
 msgid "Enable email autosending"
 msgstr "Włącz autowysyłanie e-meili"
 
-#: inc/config.class.php:212
+#: inc/config.class.php:223
 msgctxt "protocolsmanager"
 msgid "Email template"
 msgstr "Szablon e-mail"
 
-#: inc/config.class.php:590
+#: inc/config.class.php:238
+msgctxt "protocolsmanager"
+msgid "Select who should generate the pdf"
+msgstr "Wybierz, kto powinien wygenerować plik PDF"
+
+#: inc/config.class.php:242 inc/config.class.php:247
+msgctxt "protocolsmanager"
+msgid "The user who generates the document"
+msgstr "Użytkownik który wygenerował dokument"
+
+#: inc/config.class.php:697
 msgctxt "protocolsmanager"
 msgid "Only jpg and png files are accepted"
 msgstr "Akceptowane są tylko pliki jpg i png"
 
-#: inc/config.class.php:649
+#: inc/config.class.php:751
 msgctxt "protocolsmanager"
 msgid "Error - field not updated"
 msgstr "Błąd - pola nie zaktualizowano"
 
-#: inc/config.class.php:679
+#: inc/config.class.php:779
 msgctxt "protocolsmanager"
 msgid "Template email updated"
 msgstr "Zaktualizowano szablon e-mail"
 
-#: inc/config.class.php:681
+#: inc/config.class.php:781
 msgctxt "protocolsmanager"
 msgid "Error - Template email not updated"
 msgstr "Błąd - nie zaktualizowano szablonu"
 
-#: inc/generate.class.php:97
+#: inc/generate.class.php:100
 msgctxt "protocolsmanager"
 msgid "Change Field"
 msgstr "Zmień pole"
 
-#: inc/generate.class.php:121
+#: inc/generate.class.php:103
 msgctxt "protocolsmanager"
 msgid "Current User Field: "
 msgstr "Aktualne pole użytkownika: "
 
-#: inc/generate.class.php:297
+#: inc/generate.class.php:312
 msgctxt "protocolsmanager"
 msgid "Select recipients from template or enter manually to send email"
 msgstr "Wybierz odbiorców z szablonu lub wprowadź ręcznie aby wysłać e-mail"
 
-#: inc/generate.class.php:301
+#: inc/generate.class.php:315
 msgctxt "protocolsmanager"
 msgid "Enter recipients manually"
 msgstr "Wprowadź odbiorców ręcznie"
 
-#: inc/generate.class.php:302
+#: inc/generate.class.php:316
 msgctxt "protocolsmanager"
 msgid "Recipients (use ; to separate emails)"
 msgstr "Odbiorcy (użyj ; aby oddzielić adresy)"
 
-#: inc/generate.class.php:307
+#: inc/generate.class.php:319
 msgctxt "protocolsmanager"
 msgid "Select recipients from template"
 msgstr "Wybierz odbiorców z szablonu"
 
-#: inc/generate.class.php:326
+#: inc/generate.class.php:337
 msgctxt "protocolsmanager"
 msgid "Add Custom Fields"
 msgstr "Dodaj własne pola"
 
-#: inc/generate.class.php:415
+#: inc/generate.class.php:426
 msgctxt "protocolsmanager"
 msgid "No signed"
 msgstr "Niepodpisany"
 
-#: inc/generate.class.php:415
+#: inc/generate.class.php:426
 msgctxt "protocolsmanager"
 msgid "Signed"
 msgstr "Podpisany"
-
-#: inc/generate.class.php:738
-msgctxt "protocolsmanager"
-msgid "GLPI Protocols Manager mail"
-msgstr "Mail Menadżera Protokołów GLPI"
 
 #: inc/mailReminder.php:180
 msgctxt "protocolsmanager"
@@ -265,18 +276,19 @@ msgctxt "protocolsmanager"
 msgid "GLPI REMINDER"
 msgstr "Przypomnienie z GLPI"
 
-#: inc/mailReminder.php:256 inc/sign.class.php:58
+#: inc/mailReminder.php:256 inc/sign.class.php:59
+#, php-format
 msgctxt "protocolsmanager"
-msgid "Email sent to "
-msgstr "Wysłano email do "
+msgid "Email sent to %s"
+msgstr "Wysłano email do %s"
 
-#: inc/mailReminder.php:259 inc/sign.class.php:61
+#: inc/mailReminder.php:259 inc/sign.class.php:62
 msgctxt "protocolsmanager"
 msgid "Can not confirm, add e-mail"
 msgstr "Nie można potwierdzić, dodaj e-mail dla użytkownika"
 
 #: inc/profile.class.php:6 inc/profile.class.php:43 inc/protocols.class.php:7
-#: setup.php:4
+#: setup.php:7
 msgctxt "protocolsmanager"
 msgid "Protocols manager"
 msgstr "Menadżer Protokołów"
@@ -331,32 +343,32 @@ msgctxt "protocolsmanager"
 msgid "Protocols manager Reminder"
 msgstr "Przypomnienie Menadżera Protokołów"
 
-#: inc/sign.class.php:43
+#: inc/sign.class.php:44
 msgctxt "protocolsmanager"
 msgid "GLPI Protocols Manager confirm code"
 msgstr "Kod potwierdzający Menadżera Protokołów GLPI"
 
-#: inc/sign.class.php:44
+#: inc/sign.class.php:45
 msgctxt "protocolsmanager"
 msgid "confirm code - "
 msgstr "kod potwierdzający - "
 
-#: inc/sign.class.php:114
+#: inc/sign.class.php:118
 msgctxt "protocolsmanager"
 msgid "Check your email and write code"
 msgstr "Sprawdź e-mail i wpisz kod"
 
-#: inc/sign.class.php:120
+#: inc/sign.class.php:124
 msgctxt "protocolsmanager"
 msgid "Submit"
 msgstr "Wyślij"
 
-#: inc/sign.class.php:140
+#: inc/sign.class.php:145
 msgctxt "protocolsmanager"
 msgid "wrong confirmation code"
 msgstr "zły kod potwierdzający"
 
-#: setup.php:21
+#: setup.php:36
 msgctxt "protocolsmanager"
-msgid "GLPI version NOT compatible. Requires GLPI 10.0"
-msgstr "Wersja GLPI jest niekompatybilna. Wymagana jest wersja 10.0"
+msgid "This plugin requires GLPI >= 10.0.0 and < 11.0.0"
+msgstr "Ta wtyczka wymaga wersji GLPI >= 10.0.0 i < 11.0.0"
