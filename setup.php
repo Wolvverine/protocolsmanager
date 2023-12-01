@@ -61,9 +61,9 @@ function plugin_init_protocolsmanager() {
 	Plugin::registerClass('PluginProtocolsmanagerReminder');
 	$PLUGIN_HOOKS['add_css']['protocolsmanager'] = 'css/styles.css';
 
-		if (Session::haveRight("config", READ)) {
-			$PLUGIN_HOOKS["menu_toadd"]['protocolsmanager'] = ['config' => 'PluginProtocolsmanagerMenu'];
-		}
+#		if (Session::haveRight("config", READ)) {
+#			$PLUGIN_HOOKS["menu_toadd"]['protocolsmanager'] = ['config' => 'PluginProtocolsmanagerMenu'];
+#		}
 
 		if (Session::haveRight('config', READ)) {
 			$PLUGIN_HOOKS['config_page']['protocolsmanager'] = 'front/config.form.php';
