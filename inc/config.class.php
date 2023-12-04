@@ -391,18 +391,13 @@ class PluginProtocolsmanagerConfig extends CommonDBTM {
 					]
 				);
 			}
-
 			if (isset($_POST["author_name"])) {
 				$author_name = $_POST["author_name"];
-
 			}
 			if (isset($_POST["author_state"])) {
 				$author_state = $_POST["author_state"];
-
 			}
-
 			// TODO : concatenated when fields are empty
-
 			
 			
 			//if new template
@@ -700,7 +695,7 @@ class PluginProtocolsmanagerConfig extends CommonDBTM {
 					Session::addMessageAfterRedirect(__('Unknown error'), 'WARNING', true);
 				}
 			} else {
-				Session::addMessageAfterRedirect('File too large to be added.', 'WARNING', true);
+				Session::addMessageAfterRedirect(__('File too large to be added.'), 'WARNING', true);
 			}
 		}
 	}
