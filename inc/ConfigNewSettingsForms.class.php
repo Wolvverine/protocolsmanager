@@ -196,14 +196,16 @@ class ConfigNewSettingsForms {
 						</tr>
 						<tr class='tab_bg_1' style='padding-top: 20px;'>
 							<td class='center' width='7%' style='padding-top: 20px;'>
-								". __('Sign email template','protocolsmanager') . "
+								". __('Sign email title','protocolsmanager') . "
 							</td>
 							<td class='center' colspan='2'>
 								<input style='width:80%' type='text' name='template_title' value='".$title."'>
 							</td>
 						</tr>
 						<tr>
-							<td class='center'></td>
+							<td class='center'>
+							". __('Sign email body','protocolsmanager') . "
+							</td>
 							<td class='center' colspan='2'>
 								<textarea style='width:80%; height: 150px;' type='text' name='template_body'>
 									".$body."
