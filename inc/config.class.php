@@ -148,6 +148,7 @@ class PluginProtocolsmanagerConfig extends CommonDBTM {
 		//echo "<tr><th></th>";
 		echo "<tr><th colspan='3'>".__('Create','protocolsmanager')." ".__('template','protocolsmanager')."<a href='https://github.com/Wolvverine/protocolsmanager/wiki/Using-the-plugin' target='_blank'><img src='../img/help.png' width='20px' height='20px' align='right'></a></th></tr>";
 		echo "<tr><td>".__('Template name','protocolsmanager')."*</td><td colspan='2'><input type='text' name='template_name' style='width:80%;' value='".htmlspecialchars($template_name,ENT_QUOTES)."'></td></tr>";
+		echo "<tr><td>".__('Document title','protocolsmanager')."*</td><td colspan='2'><input type='text' name='title' style='width:80%;' value='".htmlspecialchars($title,ENT_QUOTES)."'></td></tr>";
 		echo "<tr><td></td><td colspan='2'><small class='text-muted'>".__('You can use {owner} here.', 'protocolsmanager')."</small></td></tr>";
 		echo "<tr><td>" . __('Font','protocolsmanager') . "</td><td colspan='2'><select name='font' style='width:150px'>";
 		
