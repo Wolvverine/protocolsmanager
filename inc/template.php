@@ -79,301 +79,217 @@
 
 	//if no comments, there is no comments column
 	if (empty(array_filter($comments))) {
-		
 		//if serial and inventory in different columns
 		if ($serial_mode == 1) {
-			
-			echo '<tr>
-				<th></th>
-				<th>'; 
-				echo __('Type');
-				echo "</th><th>"; 
-				echo __('Manufacturer'); 
-				echo "</th><th>"; 
-				echo __('Model');
-				echo "</th><th>";
-				echo __('Name');
-				echo "</th><th>"; 
-				echo __('Serial number'); 
-				echo "</th><th>";
-				echo __('Inventory number'); 
-				echo "</th>";
-				echo "</tr>";
-				
-			
-				if (isset($number))
-				{
-			foreach ($number as $key) {
+			echo '<tr><th></th><th>'; 
+			echo __('Type');
+			echo "</th><th>"; 
+			echo __('Manufacturer'); 
+			echo "</th><th>"; 
+			echo __('Model');
+			echo "</th><th>";
+			echo __('Name');
+			echo "</th><th>"; 
+			echo __('Serial number'); 
+			echo "</th><th>";
+			echo __('Inventory number'); 
+			echo "</th>";
+			echo "</tr>";
 
-						$conca = '<tr><td>'. $lp . '</td>';
-		
-				if (isset($type_name[$key])) {
-							$conca .= '<td>' . $type_name[$key] .'</td>';
-						}
-
-						// if there is manufacturer
-						if(isset($man_name[$key]) && !empty($man_name[$key]))
-						{
-
-							if(isset($mod_name[$key]))
-							{
-								$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
-
-							}
-							else {
-								$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
-							}
-							
+			if (isset($number)) {
+				foreach ($number as $key) {
+					$conca = '<tr><td>'. $lp . '</td>';
+					if (isset($type_name[$key])) {
+						$conca .= '<td>' . $type_name[$key] .'</td>';
+					}
+					// if there is manufacturer
+					if(isset($man_name[$key]) && !empty($man_name[$key])) 	{
+						if(isset($mod_name[$key])) {
+							$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
 						}
 						else {
-							$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+							$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
 						}
-		
-						if (isset($item_name[$key])) {
-							$conca .= '<td>' .$item_name[$key] .'</td>';
+					}
+					else {
+						$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+					}
+					if (isset($item_name[$key])) {
+						$conca .= '<td>' .$item_name[$key] .'</td>';
+					}
+					if (isset($serial[$key])) {
+						$conca .= '<td>'. $serial[$key] .'</td>';
+					}
+					if (isset($otherserial[$key])) {
+						$conca .= '<td>'. $otherserial[$key] .'</td>';
+					}
+					echo $conca .= '</tr>';
+					$lp++;
 				}
-		
-						if (isset($serial[$key])) {
-							$conca .= '<td>'. $serial[$key] .'</td>';
-						}
-		
-						if (isset($otherserial[$key])) {
-							$conca .= '<td>'. $otherserial[$key] .'</td>';
-						}
-		
-						echo $conca .= '</tr>';
-		
-				$lp++;
 			}
 		}
-
-			}
-
 		//if serial and inventory in one column
 		if ($serial_mode == 2) {
+			echo "<tr><th></th><th>"; 
+			echo __('Type');
+			echo "</th><th>"; 
+			echo __('Manufacturer'); 
+			echo "</th><th>"; 
+			echo __('Model'); 
+			echo "</th><th>"; 
+			echo __('Name'); 
+			echo "</th><th>";
+			echo __('Serial number');
+			echo "</th>	</tr>";
 			
-			echo "<tr>
-				<th></th>
-				<th>"; 
-				echo __('Type');
-				echo "</th><th>"; 
-				echo __('Manufacturer'); 
-				echo "</th><th>"; 
-				echo __('Model'); 
-				echo "</th><th>"; 
-				echo __('Name'); 
-				echo "</th><th>";
-				echo __('Serial number');
-				echo "</th>
-			</tr>";
-			
-				if (isset($number))
-				{
-			foreach ($number as $key) {
-				if (empty($serial[$key])) {
-					$serial[$key]=$otherserial[$key];
-				} //if no serial, get inventory number
+			if (isset($number)) {
+				foreach ($number as $key) {
+					if (empty($serial[$key])) {
+						$serial[$key]=$otherserial[$key];
+					} //if no serial, get inventory number
+					$conca = '<tr><td>'. $lp . '</td>';
 
-						$conca = '<tr><td>'. $lp . '</td>';
-		
-						if (isset($type_name[$key])) {
-							$conca .= '<td>' . $type_name[$key] .'</td>';
-						}
-
-						// if there is manufacturer
-						if(isset($man_name[$key]) && !empty($man_name[$key]))
-						{
-
-							if(isset($mod_name[$key]))
-							{
-								$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
-
-							}
-							else {
-								$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
-				}
-							
+					if (isset($type_name[$key])) {
+						$conca .= '<td>' . $type_name[$key] .'</td>';
+					}
+					
+					// if there is manufacturer
+					if(isset($man_name[$key]) && !empty($man_name[$key])) {
+						if(isset($mod_name[$key])) {
+							$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
 						}
 						else {
-							$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+							$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
 						}
-		
-						if (isset($item_name[$key])) {
-							$conca .= '<td>' .$item_name[$key] .'</td>';
-						}
-		
-						if (isset($serial[$key])) {
-							$conca .= '<td>'. $serial[$key] .'</td>';
-						}
-		
-						echo $conca .= '</tr>';
-		
-				$lp++;
+					}
+					else {
+						$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+					}	
+					if (isset($item_name[$key])) {
+						$conca .= '<td>' .$item_name[$key] .'</td>';
+					}
+					if (isset($serial[$key])) {
+						$conca .= '<td>'. $serial[$key] .'</td>';
+					}
+					echo $conca .= '</tr>';
+					$lp++;
+				}
 			}
 		}
-
 	}
-
-		}
 	else {
 		//if at least one comment, there will be comment column
 		if ($serial_mode == 1) {
+			echo "<tr><th></th><th>"; 
+			echo __('Type');
+			echo "</th><th>"; 
+			echo __('Manufacturer'); 
+			echo "</th><th>"; 
+			echo __('Model'); 
+			echo "</th><th>"; 
+			echo __('Name'); 
+			echo "</th><th>"; 
+			echo __('Serial number'); 
+			echo "</th><th>";
+			echo __('Inventory number'); 
+			echo "</th><th>";
+			echo __('Comments'); 
+			echo "</th></tr>";
 			
-			echo "<tr>
-				<th></th>
-				<th>"; 
-				echo __('Type');
-				echo "</th><th>"; 
-				echo __('Manufacturer'); 
-				echo "</th><th>"; 
-				echo __('Model'); 
-				echo "</th><th>"; 
-				echo __('Name'); 
-				echo "</th><th>"; 
-				echo __('Serial number'); 
-				echo "</th><th>";
-				echo __('Inventory number'); 
-				echo "</th><th>";
-				echo __('Comments'); 
-				echo "</th>
-			</tr>";
-			
-				if (isset($number))
-				{
-					foreach ($number as $key) {
-
-						$conca = '<tr><td>'. $lp . '</td>';
-		
-						if (isset($type_name[$key])) {
-							$conca .= '<td>' . $type_name[$key] .'</td>';
-						}
-		
-						// if there is manufacturer
-						if(isset($man_name[$key]) && !empty($man_name[$key]))
-						{
-
-							if(isset($mod_name[$key]))
-							{
-								$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
-
-							}
-							else {
-								$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
-							}
-							
+			if (isset($number)) {
+				foreach ($number as $key) {
+					$conca = '<tr><td>'. $lp . '</td>';
+					if (isset($type_name[$key])) {
+						$conca .= '<td>' . $type_name[$key] .'</td>';
+					}
+					// if there is manufacturer
+					if (isset($man_name[$key]) && !empty($man_name[$key])) {
+						if (isset($mod_name[$key])) {
+							$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
 						}
 						else {
-							$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+							$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
 						}
-		
-						if (isset($item_name[$key])) {
-							$conca .= '<td>' .$item_name[$key] .'</td>';
-						}
-		
-						if (isset($serial[$key])) {
-							$conca .= '<td>'. $serial[$key] .'</td>';
-						}
-		
-						if (isset($otherserial[$key])) {
-							$conca .= '<td>'. $otherserial[$key] .'</td>';
-						}
-
-						if (isset($comments[$key])) {
-							$conca .= '<td>'. $comments[$key] .'</td>';
+					}
+					else {
+						$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+					}
+					if (isset($item_name[$key])) {
+						$conca .= '<td>' .$item_name[$key] .'</td>';
+					}
+					if (isset($serial[$key])) {
+						$conca .= '<td>'. $serial[$key] .'</td>';
+					}
+					if (isset($otherserial[$key])) {
+						$conca .= '<td>'. $otherserial[$key] .'</td>';
+					}
+					if (isset($comments[$key])) {
+						$conca .= '<td>'. $comments[$key] .'</td>';
+					}
+					echo $conca .= '</tr>';
+					$lp++;
 				}
-		
-						echo $conca .= '</tr>';
-		
-				$lp++;
 			}
 		}
-			}
-
 		if ($serial_mode == 2) {
+			echo "<tr><th></th><th>"; 
+			echo __('Type');
+			echo "</th><th>"; 
+			echo __('Manufacturer'); 
+			echo "</th><th>"; 
+			echo __('Model'); 
+			echo "</th><th>"; 
+			echo __('Name'); 
+			echo "</th><th>";
+			echo __('Serial number'); 
+			echo "</th><th>";
+			echo __('Comments'); 
+			echo "</th></tr>";
 			
-			echo "<tr>
-				<th></th>
-				<th>"; 
-				echo __('Type');
-				echo "</th><th>"; 
-				echo __('Manufacturer'); 
-				echo "</th><th>"; 
-				echo __('Model'); 
-				echo "</th><th>"; 
-				echo __('Name'); 
-				echo "</th><th>";
-				echo __('Serial number'); 
-				echo "</th><th>";
-				echo __('Comments'); 
-				echo "</th>
-			</tr>";
-			
-				
-				if (isset($number))
-				{
-					foreach ($number as $key) {
-
-				if (empty($serial[$key])) {
-					$serial[$key]=$otherserial[$key];
-				} //if no serial, get inventory number
-
-						$conca = '<tr><td>'. $lp . '</td>';
-		
-						if (isset($type_name[$key])) {
-							$conca .= '<td>' . $type_name[$key] .'</td>';
-						}
-		
-						// if there is manufacturer
-						if(isset($man_name[$key]) && !empty($man_name[$key]))
-						{
-
-							if(isset($mod_name[$key]))
-							{
-								$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
-
-				}
-							else {
-								$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
-							}
-							
+			if (isset($number)) {
+				foreach ($number as $key) {
+					if (empty($serial[$key])) {
+						$serial[$key]=$otherserial[$key];
+					} //if no serial, get inventory number
+					$conca = '<tr><td>'. $lp . '</td>';
+					if (isset($type_name[$key])) {
+						$conca .= '<td>' . $type_name[$key] .'</td>';
+					}
+					// if there is manufacturer
+					if(isset($man_name[$key]) && !empty($man_name[$key])) {
+						if(isset($mod_name[$key])) {
+							$conca .= '<td>'. $man_name[$key] .'</td><td>'. $mod_name[$key]. '</td>';
 						}
 						else {
-							$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+							$conca .= '<td>'. $man_name[$key] .'</td><td></td>';
 						}
-		
-						if (isset($item_name[$key])) {
-							$conca .= '<td>' .$item_name[$key] .'</td>';
-						}
-		
-						if (isset($serial[$key])) {
-							$conca .= '<td>'. $serial[$key] .'</td>';
-						}
-
-						if (isset($comments[$key])) {
-							$conca .= '<td>'. $comments[$key] .'</td>';
-						}
-		
-						echo $conca .= '</tr>';
-		
-				$lp++;
+					}
+					else {
+						$conca .= '<td></td><td>'. $mod_name[$key] .'</td>';
+					}
+					if (isset($item_name[$key])) {
+						$conca .= '<td>' .$item_name[$key] .'</td>';
+					}
+					if (isset($serial[$key])) {
+						$conca .= '<td>'. $serial[$key] .'</td>';
+					}
+					if (isset($comments[$key])) {
+						$conca .= '<td>'. $comments[$key] .'</td>';
+					}
+					echo $conca .= '</tr>';
+					$lp++;
+				}
 			}
 		}
-			}
-
 	}
-		
-
 	?>
 	</table>
-
 	<br>
-
 	<table>
 	<tr>
 		<td style="height: 10mm;"></td>
 	</tr>
 	</table>
-
 	<table>
 	<tr>
 		<td style="weight:100%;">
