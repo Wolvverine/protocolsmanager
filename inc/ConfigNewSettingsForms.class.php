@@ -18,7 +18,6 @@ class ConfigNewSettingsForms {
 										". __('Set user fields option','protocolsmanager') . "
 									</td>
 									<td class='center' width='7%'>
-										
 									<select name='user_fields' style='font-size:14px; width:95%'>";
 		foreach ($User_Fields as $fuid => $userfield) {
 			echo '<option value="'.$userfield["fieldname"].','.$userfield["containername"].'" '.($userfield["fieldname"] == $field_user ? 'selected style="font-weight:bold"' : '').'>'.__($userfield["label"],'fields').'</option>';
@@ -27,7 +26,6 @@ class ConfigNewSettingsForms {
 			  <option value='users_id_tech' ".('users_id_tech' == $field_user ? 'selected style="font-weight:bold"' : '').">".__('Technician')."</option>
 									</select>
 									</td>
-
 									<td class='center' width='7%'>
 										<input type='hidden' name='witch_field_settings' value='user_fields' >
 										<input type='submit' name='service_settings' class='submit' value='".__('Change','protocolsmanager')."'>
@@ -35,7 +33,7 @@ class ConfigNewSettingsForms {
 								</tr>";
 		Html::closeForm();
 	}
-
+	
 	static function show_own_assets($showOwnAssetsOn, $showOwnAssetsOff ) {
 		echo "
 		<script type='text/javascript' src='../js/jquery.switcher.js'></script>
@@ -167,57 +165,57 @@ class ConfigNewSettingsForms {
 		$title = isset($temlateData['template_title']) ? $temlateData['template_title'] : 'message title';
 		$body = isset($temlateData['template_body']) ? $temlateData['template_body'] : 'message body';
 		global $DB;
- 		$mailPictReqest =  $DB->request(
-            "settings_new",
-            "`option_name` = 'mail_pict1'"
-        );
+		$mailPictReqest =  $DB->request(
+			"settings_new",
+			"`option_name` = 'mail_pict1'"
+		);
 
 		$mailPict ='';
 		foreach ($mailPictReqest as $row) {
-            $mailPict = $row['option_value'];
+			$mailPict = $row['option_value'];
 		}
 		
-// $mailPict = 'mail_pict_folder/mail_pict1.jpg';
 		echo "<form method='post' action='config.form.php' >
-							  <input type='hidden' name='menu_mode' value='e'>
-							  <tr class='tab_bg_1 remindersEmails' style='padding-top: 20px;'>
-									<td class='center' width='7%' id='td_fileupload'>
-									<input type='hidden' id='hidd_fileupload' value='default1' />
-									<div id='div_html_file'>
-										" .  Html::file(['name' => 'picture', 'display' => false, 'onlyimages' => true]) .  "
-										</div>
-										<script>										
-											$('#td_fileupload').bind('DOMSubtreeModified', function() {
-												$.mailPicture();
-											});
-										</script>
-									</td>
-									<td class='center' width='7%' id='td_fileupload_pict'>
-										<img src='" . User::getURLForPicture($mailPict) . "' width='400px' id='fileupload_pict_src'>
-									</td>
-									</tr>
-							   <tr class='tab_bg_1' style='padding-top: 20px;'>
-									<td class='center' width='7%' style='padding-top: 20px;'>
-										". __('sign email template','protocolsmanager') . "
-									</td>
-									<td class='center' colspan='2'>
-									  <input style='width:80%' type='text' name='template_title' value='".$title."'>
-									</td>
-							  
-									
-								</tr>
-								<tr>
-								<td class='center'></td>
-								<td class='center' colspan='2'>
-									<textarea style='width:80%; height: 150px;' type='text' name='template_body'>".
-			$body."</textarea>
-								</td>
-								
-								<td class='center' width='7%'>
-										<input type='submit' name='email_template_new' class='submit' value='".__('Save','protocolsmanager')."'>																			
-								 </td>
-								</tr>
-								";
+				<input type='hidden' name='menu_mode' value='e'>
+				<tr class='tab_bg_1 remindersEmails' style='padding-top: 20px;'>
+					<td class='center' width='7%' id='td_fileupload'>
+						".__('Logo for email:')."
+						<input type='hidden' id='hidd_fileupload' value='default1' />
+							<div id='div_html_file'>
+								" . Html::file(['name' => 'picture', 'display' => false, 'onlyimages' => true]) . "
+							</div>
+							<script>
+								$('#td_fileupload').bind('DOMSubtreeModified', function() {
+									$.mailPicture();
+								});
+							</script>
+						</td>
+						<td class='center' width='7%' id='td_fileupload_pict'>
+							<img src='" . User::getURLForPicture($mailPict) . "' width='128px' id='fileupload_pict_src'>
+						</td>
+						</tr>
+						<tr class='tab_bg_1' style='padding-top: 20px;'>
+							<td class='center' width='7%' style='padding-top: 20px;'>
+								". __('Sign email title','protocolsmanager') . "
+							</td>
+							<td class='center' colspan='2'>
+								<input style='width:80%' type='text' name='template_title' value='".$title."'>
+							</td>
+						</tr>
+						<tr>
+							<td class='center'>
+							". __('Sign email body','protocolsmanager') . "
+							</td>
+							<td class='center' colspan='2'>
+								<textarea style='width:80%; height: 150px;' type='text' name='template_body'>
+									".$body."
+								</textarea>
+							</td>
+							<td class='center' width='7%'>
+								<input type='submit' name='email_template_new' class='submit' value='".__('Save','protocolsmanager')."'>
+							 </td>
+						</tr>
+			";
 		Html::closeForm();
 	}
 }
